@@ -1,0 +1,96 @@
+{
+  "name": "sap-ca-custom-components",
+  "version": "1.0.0",
+  "description": "Custom components",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/hana": "^1.7.0",
+    "@sap-cloud-sdk/http-client": "^3.26.3",
+    "@sap-cloud-sdk/resilience": "^3.26.3",
+    "@sap/cds": "^8.8.2",
+    "@sap/hdi-deploy": "^5.4.1",
+    "@sap/xssec": "^4.4.0",
+    "@ui5/cli": "^4.0.13",
+    "express": "^4.21.2",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^0.3.0",
+    "@cap-js/sqlite": "^1.9.0",
+    "@sap/cds-dk": "^7.9.9",
+    "@sap/ux-specification": "UI5-1.135",
+    "axios": "^1.8.3",
+    "chai": "^4.5.0",
+    "chai-as-promised": "^7.1.2",
+    "chai-shallow-deep-equal": "^1.4.6",
+    "chai-subset": "^1.6.0",
+    "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "mbt": "^1.2.34",
+    "mocha": "^11.1.0",
+    "rimraf": "^5.0.10"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-custom-components": "cds watch --open custom-components/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-custom-solutions": "cds watch --open custom-solutions/webapp/index.html?sap-ui-xx-viewCache=false",
+    "test": "jest tests/component-service.test.js",
+    "undeploy": "cf undeploy sap-ca-custom-components --delete-services --delete-service-keys --delete-service-brokers",
+    "build": "rimraf resources mta_archives && mbt build --mtar archive",
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-custom-components-import": "cds watch --open custom-components-import/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-custom-solutions-admin": "cds watch --open custom-solutions-admin/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "[development]": {
+        "db": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": "db.sqlite"
+          }
+        }
+      },
+      "[production]": {
+        "db": "hana",
+        "auth": "xsuaa",
+        "hana": {
+          "deploy": {
+            "data": false 
+          }
+        }
+      },
+      "S4_PROD_ABAP_PACKAGES": {
+        "kind": "odata-v4",
+        "model": "srv/external/S4_PROD_ABAP_PACKAGES",
+        "credentials": {
+          "destination": "CUSTOM-COMPONENTS-S4-BA",
+          "path": "/sap/opu/odata4/sap/zcacsa_custom_solutions_api_o4/srvd_a2x/sap/zcacsa_custom_solutions_u/0001"
+        },
+        "csrf": true,
+        "csrfInBatch": true
+      },
+      "destinations": true,
+      "html5-repo": true,
+      "workzone": true,
+      "application-logging": true,
+      "connectivity": true
+    },
+    "sql": {
+      "native_hana_associations": false
+    }
+  },
+  "sapux": [
+    "app/custom-components",
+    "app/custom-solutions",
+    "app/custom-components-import",
+    "app/custom-solutions-admin"
+  ],
+  "engines": {
+    "node": "^20.0.0"
+  }
+}

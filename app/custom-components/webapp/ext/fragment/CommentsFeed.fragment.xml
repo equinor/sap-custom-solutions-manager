@@ -1,0 +1,22 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:macros="sap.fe.macros">
+	<VBox>
+		<FeedInput core:require="{ handler: 'com/equinor/ca/customcomponents/ext/fragment/CommentsFeed'}"
+			post="handler.onPost"
+			class="sapUiSmallMarginTopBottom" />
+		<List showSeparators="Inner"
+			core:require="{ handler: 'com/equinor/ca/customcomponents/ext/fragment/CommentsFeed'}"
+			id="commentFeedList"
+			items="{path: 'comments', sorter: {path: 'createdAt', descending: true}}">
+			<FeedListItem sender="{createdBy}"
+				timestamp="{createdAt}"
+				text="{commentText}">
+				<FeedListItemAction text="Delete"
+					icon="sap-icon://delete"
+					key="delete"
+					press="handler.onDeletePressed"/>
+			</FeedListItem>
+		</List>
+	</VBox>
+</core:FragmentDefinition>

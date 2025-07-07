@@ -1,0 +1,53 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+	xmlns="sap.m"
+	xmlns:macros="sap.fe.macros">
+	<VBox core:require="{ handler: 'com/equinor/ca/customcomponents/ext/fragment/RatePackage'}">
+		<Table inset="false"
+			id="ratingsTable"
+			mode="Delete"
+			delete="handler.deleteRating"
+			items="{
+			path: 'ratings',
+			sorter: {path: 'createdAt', descending: true}
+		}">
+			<columns>
+				<Column>
+					<Text text="Rating" />
+				</Column>
+				<Column>
+					<Text text="Type" />
+				</Column>
+				<Column minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="Comment" />
+				</Column>
+				<Column minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="Author" />
+				</Column>
+				<Column minScreenWidth="Tablet"
+					demandPopin="true">
+					<Text text="Date" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<RatingIndicator editable="false"
+							value="{rating}"
+							iconSize="18px"/>
+						<Text   
+							text="{
+							path: 'ratingType_code',
+							targetType:'any',
+							formatter: 'handler.formatRatingType'
+						}"/>
+						<Text text="{comment}" />
+						<Text text="{createdByFullName}" />
+						<Text text="{createdAt}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</VBox>
+</core:FragmentDefinition>

@@ -1,0 +1,256 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.equinor.ca.customcomponents",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:worklist",
+      "version": "1.15.1",
+      "toolsId": "af5a74f3-5edc-4cc2-9ddd-d5d6be211491"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/component/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "component-display": {
+          "semanticObject": "component",
+          "action": "display",
+          "title": "{{flpTitle}}",
+          "icon": "sap-icon://product",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      },
+      "outbounds": {
+        "solution-display": {
+          "semanticObject": "solution",
+          "action": "display",
+          "parameters": {
+            "ID": {
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.131.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {},
+        "sap.f": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.equinor.ca.customcomponents.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {
+        "flexibleColumnLayout": {
+          "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+          "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+        },
+        "routerClass": "sap.f.routing.Router"
+      },
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "ComponentsList",
+          "target": [
+            "ComponentsList"
+          ]
+        },
+        {
+          "name": "ComponentsObjectPage",
+          "pattern": "Components({ComponentsKey}):?query:",
+          "target": [
+            "ComponentsList",
+            "ComponentsObjectPage"
+          ]
+        }
+      ],
+      "targets": {
+        "ComponentsList": {
+          "type": "Component",
+          "id": "ComponentsList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/Components",
+              "variantManagement": "Page",
+              "hideFilterBar": false,
+              "navigation": {
+                "Components": {
+                  "detail": {
+                    "route": "ComponentsObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "DataFieldForAnnotation::DataPoint::latestCleanCoreRating": {
+                      "availability": "Adaptation"
+                    },
+                    "DataFieldForAnnotation::DataPoint::latestCodeQualityRating": {
+                      "availability": "Adaptation"
+                    }
+                  }
+                }
+              },
+              "initialLoad": "Enabled",
+              "defaultTemplateAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#table",
+              "content": {
+                "header": {
+                  "actions": {
+                    "refresh": {
+                      "press": "com.equinor.ca.customcomponents.ext.controller.CustomActions.importComponents",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Refresh"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "beginColumnPages",
+          "contextPattern": ""
+        },
+        "ComponentsObjectPage": {
+          "type": "Component",
+          "id": "ComponentsObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "contextPath": "/Components",
+              "content": {
+                "header": {
+                  "anchorBarVisible": true,
+                  "actions": {
+                    "openEclipse": {
+                      "press": "com.equinor.ca.customcomponents.ext.controller.CustomActions.openInEclipse",
+                      "visible": true,
+                      "enabled": true,
+                      "text": "Open in Eclipse"
+                    }
+                  }
+                },
+                "body": {
+                  "sections": {
+                    "CommentsFeed": {
+                      "template": "com.equinor.ca.customcomponents.ext.fragment.CommentsFeed",
+                      "title": "Comments",
+                      "position": {
+                        "anchor": "RatingsFeed",
+                        "placement": "After"
+                      }
+                    },
+                    "RatingsFeed": {
+                      "template": "com.equinor.ca.customcomponents.ext.fragment.RatingsFeed",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "GeneralInformation"
+                      },
+                      "title": "Ratings",
+                      "actions": {
+                        "Add": {
+                          "press": "com.equinor.ca.customcomponents.ext.fragment.RatePackage.ratePackage",
+                          "visible": true,
+                          "enabled": true,
+                          "text": "Add rating"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "controlAggregation": "midColumnPages",
+          "contextPattern": "/Components({ComponentsKey})"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "sap.fe.templates.RootContainer.view.Fcl",
+      "type": "XML",
+      "async": true,
+      "id": "appRootView"
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapcacustomcomponents.service"
+  }
+}

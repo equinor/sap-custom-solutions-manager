@@ -1,0 +1,33 @@
+specVersion: "3.1"
+metadata:
+  name: com.equinor.ca.customcomponents
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://sapui5.hana.ondemand.com
+        backend:
+          - scp: false
+            path: /odata
+            url: http://localhost:4004
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: fiori-tools-servestatic
+      afterMiddleware: compression
+      configuration:
+        paths:
+          - path: /resources/com.euqinor.ca.customsolutions
+            src: ../custom-solutions/webapp
+          - path: /appconfig
+            src: appconfig
