@@ -1,0 +1,23 @@
+### Trigger PULL action
+GET http://localhost:4004/odata/v4/component/PULL()                   
+
+### Get all packages from S/4
+GET http://localhost:4004/odata/v4/component/OnPremABAPPackages
+
+### Get all components 
+GET http://localhost:4004/odata/v4/component/Components
+
+### Get all ratings for a component
+GET http://localhost:4004/odata/v4/component/Components(ID=1adc0096-9ba2-4cc8-a6f0-358764e1e58f)/ratings
+
+### Create a new component in HANA DB
+POST http://localhost:4004/odata/v4/component/Components 
+Content-Type: application/json
+
+{"name": "Component2", "description": "Another component"}
+
+### Import data from file
+GET http://localhost:4004/odata/v4/component/IMPORT()    
+
+### ******* CAREFUL ******* Delete all components in DB 
+GET http://localhost:4004/odata/v4/component/DROP()  

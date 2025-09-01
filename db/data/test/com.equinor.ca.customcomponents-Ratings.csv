@@ -1,0 +1,31 @@
+ID,rating,comment,component_ID,ratingType_code,createdAt,createdBy,modifiedAt,modifiedBy
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1b1b1,1,"Comment1",1adc0096-9ba2-4cc8-a6f0-358764e1e58f,1,2020-01-01T00:00:00Z,John Doe,2020-01-01T00:00:00Z,John Doe  
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1b1b2,2,"Comment2",1adc0096-9ba2-4cc8-a6f0-358764e1e58f,0,2020-01-01T00:00:00Z,John Doe,2020-01-01T00:00:00Z,John Doe  
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1b1b3,5,"Comment3",1adc0096-9ba2-4cc8-a6f0-358764e1e58f,1,2020-01-01T00:00:00Z,John Doe,2020-01-23T00:00:00Z,John Doe  
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1b1b4,5,"Comment4",1adc0096-9ba2-4cc8-a6f0-358764e1e58f,0,2020-01-01T00:00:00Z,John Doe,2020-01-23T00:00:00Z,John Doe
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c001,4,"Code is well-structured and easy to follow.",ceeb3963-fe64-48b5-a34b-02685ef46b02,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c002,5,"Implements clean core principles effectively.",ceeb3963-fe64-48b5-a34b-02685ef46b02,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c003,3,"Some code duplication, but overall maintainable.",ceeb3963-fe64-48b5-a34b-02685ef46b02,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c004,4,"Adheres to SAP clean core guidelines.",ceeb3963-fe64-48b5-a34b-02685ef46b02,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c005,5,"Excellent code readability and documentation.",3596bc0d-c39c-41a7-a1a3-4e6b13a00e27,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c006,4,"Applies clean core with minimal custom code.",3596bc0d-c39c-41a7-a1a3-4e6b13a00e27,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c007,3,"Code could be refactored for better modularity.",3596bc0d-c39c-41a7-a1a3-4e6b13a00e27,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c008,4,"Good separation of concerns and clean core.",3596bc0d-c39c-41a7-a1a3-4e6b13a00e27,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c009,4,"Code is well-structured and easy to follow.",9565fc9c-2817-43c9-9348-95a034301ee1,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c010,5,"Implements clean core principles effectively.",9565fc9c-2817-43c9-9348-95a034301ee1,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c011,3,"Some code duplication, but overall maintainable.",9565fc9c-2817-43c9-9348-95a034301ee1,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c012,4,"Adheres to SAP clean core guidelines.",9565fc9c-2817-43c9-9348-95a034301ee1,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c013,5,"Excellent code readability and documentation.",efe37a6a-a978-4af5-b30a-f009b9ae3ad7,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c014,4,"Applies clean core with minimal custom code.",efe37a6a-a978-4af5-b30a-f009b9ae3ad7,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c015,3,"Code could be refactored for better modularity.",efe37a6a-a978-4af5-b30a-f009b9ae3ad7,0,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1c016,4,"Good separation of concerns and clean core.",efe37a6a-a978-4af5-b30a-f009b9ae3ad7,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d001,5,"Component demonstrates excellent code quality and follows clean core principles.",ceeb3963-fe64-48b5-a34b-02685ef46b02,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d002,4,"Component demonstrates excellent code quality and follows clean core principles.",3596bc0d-c39c-41a7-a1a3-4e6b13a00e27,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d003,5,"Component demonstrates excellent code quality and follows clean core principles.",9565fc9c-2817-43c9-9348-95a034301ee1,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d004,4,"Component demonstrates excellent code quality and follows clean core principles.",efe37a6a-a978-4af5-b30a-f009b9ae3ad7,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d005,5,"Component demonstrates excellent code quality and follows clean core principles.",18cd8c48-234a-4670-b7ed-675f42bd38cc,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d006,4,"Component demonstrates excellent code quality and follows clean core principles.",219a1932-379b-44d9-837e-794ade05ca69,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d007,5,"Component demonstrates excellent code quality and follows clean core principles.",7c54cfbc-8e7c-4beb-9691-22e29b584df4,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d008,4,"Component demonstrates excellent code quality and follows clean core principles.",8ec3d648-4e8a-4645-af2e-dc58ab4a114c,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d009,5,"Component demonstrates excellent code quality and follows clean core principles.",97fb6446-d18d-4d26-bd9c-9a2a6ae0b0f5,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI
+b1b1b1b1-b1b1-b1b1-b1b1-b1b1b1b1d00a,4,"Component demonstrates excellent code quality and follows clean core principles.",c424d5d2-3f41-48b5-9d87-d66396b62c00,1,2025-05-26T00:00:00Z,AI,2025-05-26T00:00:00Z,AI

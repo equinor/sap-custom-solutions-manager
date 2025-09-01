@@ -1,0 +1,96 @@
+<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad"
+    xmlns:table="sap.fe.macros.table"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:macros="sap.fe.macros"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    controllerName="com.equinor.ca.customsolutionsadmin.ext.main.Main">
+    <Page id="Main"
+        title="Maintain configuration for custom solution apps"   > 
+        <headerContent>
+            <Label text="Edit mode:"/>
+            <Switch state="false"
+                change="edit">
+                <layoutData>
+                    <FlexItemData growFactor="1"/>
+                </layoutData>
+            </Switch>
+        </headerContent>
+        <content>
+            <VBox>
+                <MessageStrip type="Warning" text="Be careful - changes are saved immediately. Do not delete values that are in use!" />
+                <Panel >
+                    <macros:Table id="resourceTypesTable"
+                        isSearchable="false"                    
+                        metaPath="/ResourceTypeCodeList/@com.sap.vocabularies.UI.v1.LineItem#tableMacro"
+                        header="Resource Types"
+                        enableExport="true"
+                        enableFullScreen="true"
+                        enablePaste="true">
+                        <creationMode id="resourceType"
+                            creationFields="code,name,descr"
+                            name="CreationDialog"/>
+                    </macros:Table>
+                </Panel>
+                <Panel >
+                    <macros:Table id="componentTypesTable"
+                        isSearchable="false"                        
+                        metaPath="/ComponentTypeCodeList/@com.sap.vocabularies.UI.v1.LineItem#tableMacro"
+                        header="Component Types"
+                        enableExport="true"
+                        enableFullScreen="true"
+                        enablePaste="true">
+                        <creationMode id="componentType"
+                            creationFields="code,name,descr"
+                            name="CreationDialog"/>
+                    </macros:Table>
+                </Panel>
+                <Panel >
+                    <macros:Table id="systemTypesTable"
+                        isSearchable="false"                        
+                        metaPath="/SystemTypeCodeList/@com.sap.vocabularies.UI.v1.LineItem#tableMacro"
+                        header="System Types"
+                        enableExport="true"
+                        enableFullScreen="true"
+                        enablePaste="true">
+                        <creationMode id="systemType"
+                            creationFields="code,name,descr"
+                            name="CreationDialog"/>
+                    </macros:Table>
+                </Panel>
+                <Panel >
+                    <macros:Table id="teamTable"
+                        isSearchable="false"                        
+                        metaPath="/TeamCodeList/@com.sap.vocabularies.UI.v1.LineItem#tableMacro"
+                        header="Teams"
+                        enableExport="true"
+                        enableFullScreen="true"
+                        enablePaste="true">
+                        <creationMode id="teamType"
+                            creationFields="code,name,descr"
+                            name="CreationDialog"/>
+                    </macros:Table>
+                </Panel>
+                <Panel >
+                    <macros:Table id="sapSystemsTable"
+                        isSearchable="false"
+                        metaPath="/SAPDevelopmentSystemCodeList/@com.sap.vocabularies.UI.v1.LineItem#tableMacro"
+                        header="SAP Development Systems - for connecting via ADT link"
+                        enableExport="true"
+                        enableFullScreen="true"
+                        enablePaste="true">
+                        <columns>
+                            <Column name="Code" />
+                            <Column name="Name" />
+                            <Column name="Description" />
+                        </columns>
+                        <creationMode id="sapSystem"
+                            creationFields="code,name,descr"
+                            name="CreationDialog"/>
+                    </macros:Table>
+                </Panel>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>

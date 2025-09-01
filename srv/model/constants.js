@@ -1,0 +1,26 @@
+const constants = {
+  ABAP_PACKAGES_ONPREM_PROD_SERVICE_NAME: "S4_PROD_ABAP_PACKAGES",
+  ABAP_PACKAGES_ONPREM_ENTITY: "OnPremABAPPackages",
+  
+  
+  ABAP_PACKAGES_ENTITY: "ABAPPackages",
+  COMPONENTS_ENTITY: "Components",
+  
+  SOURCE_SYSTEM_TYPES: {
+    SAP_ONPREM: "SAP_ONPREM",
+    BTP_HTML5: "BTP"
+  },
+  
+  COMPONENT_TYPES: {
+    UI5: "UI5",
+    CAP: "CAP",
+    ABAP: "ABAP"
+  },
+
+  RATING_TYPES: {
+    CLEAN_CORE_RATING: 0,
+    CODE_QUALITY_RATING: 1
+  }
+};
+
+module.exports = constants;

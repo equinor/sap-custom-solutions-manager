@@ -1,0 +1,13 @@
+{
+  "VCAP_SERVICES": {},
+  "destinations": [
+    {
+      "name": "CUSTOM-COMPONENTS-S4-BA",
+      "url": "https://sapd11.company.no:1234",
+      "username": "909090",
+      "password": "mypassword",
+      "strictSSL": false,
+      "isTrustingAllCertificates": true
+    }
+  ]
+}

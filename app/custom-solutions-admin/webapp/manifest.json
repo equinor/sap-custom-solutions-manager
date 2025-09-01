@@ -1,0 +1,127 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "com.equinor.ca.customsolutionsadmin",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:fpm",
+      "version": "1.17.0",
+      "toolsId": "71d58ec6-a985-4a20-9c57-3230707ed1c3"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/admin/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    },
+    "crossNavigation": {
+      "inbounds": {
+        "customsolutions-admin": {
+          "semanticObject": "customsolutions",
+          "action": "admin",
+          "title": "{{customsolutions-admin.flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.135.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.core": {},
+        "sap.fe.macros": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "com.equinor.ca.customsolutionsadmin.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "name": "Main",
+          "pattern": ":?query:",
+          "target": "Main"
+        }
+      ],
+      "targets": {
+        "Main": {
+          "type": "Component",
+          "id": "Main",
+          "name": "sap.fe.core.fpm",
+          "options": {
+            "settings": {
+              "navigation": {},
+              "viewName": "com.equinor.ca.customsolutionsadmin.ext.main.Main"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "sapcacustomcomponents.service"
+  },
+  "sap.fiori": {}
+}

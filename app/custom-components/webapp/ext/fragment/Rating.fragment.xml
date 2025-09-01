@@ -1,0 +1,117 @@
+<Dialog 
+    id="ratingDialog"
+    xmlns="sap.m" 
+    xmlns:l="sap.ui.layout"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    title="Rate package">
+    <content>
+    <l:VerticalLayout 
+        id="containerLayout" 
+        width="100%">
+		<l:BlockLayout 
+            id="BlockLayout" 
+            background="Default">
+			<l:BlockLayoutRow id="_IDGenBlockLayoutRow1" accentCells="Accent1">
+				<l:BlockLayoutCell
+					id="Accent1"
+					title="Clean Core">
+                    <l:VerticalLayout id="_IDGenVerticalLayout" >
+                        <Text id="_IDGenText" 
+                            class="sapUiSmallMarginTop"
+                            text="The term Clean Core refers to a principle of separating the customized and non-standard functionalities developed by Equinor from the standard SAP system." />
+                        <Link id="_IDGenLink"
+                            class="sapUiSmallMarginTop"
+                            text="How to rate Clean Core" 
+                            href="https://sapdev.equinor.com/developer-guidelines/tools/custom-solution-app/#rating-of-clean-core"
+                            target="_blank"/>
+
+                    </l:VerticalLayout>
+                </l:BlockLayoutCell>
+               
+                <l:BlockLayoutCell id="_IDGenBlockLayoutCell" 
+                    title="Code Quality">
+                    <l:VerticalLayout id="_IDGenVerticalLayout1" >
+                        <Text id="_IDGenText1"
+                            class="sapUiSmallMarginTop" 
+                            text="The term Code Quality refers to the readability and maintainability of the code." />
+                        <Link id="_IDGenLink1" 
+                            class="sapUiSmallMarginTop"
+                            text="How to rate Code Quality" 
+                            href="https://sapdev.equinor.com/developer-guidelines/tools/custom-solution-app/#rating-of-code-quality"
+                            target="_blank"/>
+                    </l:VerticalLayout>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+
+            <l:BlockLayoutRow id="_IDGenBlockLayoutRow2" accentCells="Accent1"> 
+                <l:BlockLayoutCell id="_IDGenBlockLayoutCell1"> 
+                    <l:VerticalLayout id="_IDGenVerticalLayout2" >
+                        <Title id="_IDGenTitle" text="Set rating:"/>
+                        <RatingIndicator 
+                            id="ratingCleanCore"                             
+                            change=".changeCleanCoreRating"
+                            value="{ratingModel>/cleanCoreRating}"
+                            maxValue="5"                            
+                            iconSize="22px" />
+                    </l:VerticalLayout>           
+                </l:BlockLayoutCell>
+
+                <l:BlockLayoutCell id="_IDGenBlockLayoutCell2" >
+                    <l:VerticalLayout id="_IDGenVerticalLayout3" >
+                        <Title id="_IDGenTitle1" text="Set rating:"/>
+                            <RatingIndicator 
+                                id="ratingCodeQuality"                             
+                                value="{ratingModel>/codeQualityRating}"
+                                maxValue="5"                            
+                                iconSize="22px" />
+                    </l:VerticalLayout>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+		
+            <l:BlockLayoutRow id="_IDGenBlockLayoutRow3" accentCells="Accent1"> 
+                <l:BlockLayoutCell id="_IDGenBlockLayoutCell3"> 
+                    <l:VerticalLayout id="_IDGenVerticalLayout4"
+                        width="100%" >
+                        <Title id="_IDGenTitle2" text="Comment:"/>
+                        <TextArea id="_IDGenTextArea"
+                            width="100%"
+                            value="{ratingModel>/cleanCoreComment}"
+                            rows="10" 
+                            maxLength="1000"/>
+                        </l:VerticalLayout>           
+                    </l:BlockLayoutCell>
+                    
+                    <l:BlockLayoutCell id="_IDGenBlockLayoutCell4" >
+                        <l:VerticalLayout id="_IDGenVerticalLayout5" 
+                        width="100%">
+                        <Title id="_IDGenTitle3" text="Comment:"/>
+                        <TextArea id="_IDGenTextArea1"
+                            width="100%"
+                            value="{ratingModel>/codeQualityComment}"
+                            rows="10" 
+                            maxLength="1000"/>
+                    </l:VerticalLayout>
+                </l:BlockLayoutCell>
+            </l:BlockLayoutRow>
+		
+        </l:BlockLayout>
+    </l:VerticalLayout>
+    </content>
+	<footer>
+        <Toolbar id="_IDGenToolbar">
+            <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+            <Button 
+                id="saveRating"               
+                type="Accept"
+                text="Save"
+                press=".saveRatings" />
+            <Button 
+                id="Reject"
+                text="Cancel"
+                type="Reject"
+                press=".closeRatingDialog"
+                ariaHasPopup="Dialog" />
+        </Toolbar>
+    </footer>
+
+</Dialog>
