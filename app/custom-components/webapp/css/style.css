@@ -1,0 +1,4 @@
+[id*="ComponentsList--fe"] .sapMRI {
+    transform: scale(0.7) !important;
+    transform-origin: left center !important;
+}
