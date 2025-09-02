@@ -89,11 +89,9 @@ annotate  service.Components with {
   );
   latestCleanCoreRating @(
     Common.Label : 'Latest Clean Core Rating',
-    UI.Hidden : true,
   );
   latestCodeQualityRating @(
     Common.Label : 'Latest Code Quality Rating',
-    UI.Hidden : true,
   );
 };
 
