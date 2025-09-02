@@ -1,3 +1,4 @@
+/* Scale Rating Display down to 70% for ComponentList table */
 [id*="ComponentsList--fe"] .sapMRI {
     transform: scale(0.7) !important;
     transform-origin: left center !important;
