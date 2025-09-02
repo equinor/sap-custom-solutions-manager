@@ -25,8 +25,19 @@ Thank you for your interest in contributing to our open source project! We welco
 5. **Commit Your Changes**  
    Use descriptive commit messages:  
    ```bash
-   git commit -m "Add feature: description of changes"
+   git commit -m "<type>: <description>"
    ```
+   Types:
+   - **feat**: A new feature.
+   - **fix**: A bug fix.
+   - **docs**: Documentation-only changes.
+   - **style**: Changes that do not affect the meaning of the code (e.g., formatting, white-space).
+   - **refactor**: A code change that neither fixes a bug nor adds a feature.
+   - **perf**: A code change that improves performance.
+   - **test**: Adding missing tests or correcting existing tests.
+   - **build**: Changes that affect the build system or external dependencies.
+   - **chore**: Other changes that don't modify src or test files.
+   - **revert**: Reverts a previous commit.
 
 6. **Push to Your Fork**  
    Push your changes to your forked repository:  
