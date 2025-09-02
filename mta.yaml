@@ -214,8 +214,8 @@ resources:
 - name: sap-ca-custom-components-logging
   type: org.cloudfoundry.managed-service
   parameters:
-    service: application-logs
-    service-plan: lite
+    service: cloud-logging
+    service-plan: standard
 - name: sap-ca-custom-components-connectivity
   type: org.cloudfoundry.managed-service
   parameters:
