@@ -28,7 +28,7 @@
     "crossNavigation": {
       "inbounds": {
         "custom-solutions-display": {
-          "semanticObject": "custom-solutions",
+          "semanticObject": "componentimport",
           "action": "display",
           "signature": {
             "parameters": {},
