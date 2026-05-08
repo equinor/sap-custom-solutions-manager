@@ -10,11 +10,11 @@
   "main": "webapp/index.html",
   "dependencies": {},
   "devDependencies": {
-    "@ui5/cli": "^3.0.0",
+    "@ui5/cli": "^4.0.52",
     "@sap/ux-ui5-tooling": "1",
     "ui5-task-zipper": "^3",
     "@sap/ui5-builder-webide-extension": "^1.1.9",
-    "mbt": "^1.2.27"
+    "mbt": "^1.2.49"
   },
   "scripts": {
     "deploy-config": "npx -p @sap/ux-ui5-tooling fiori add deploy-config cf",
