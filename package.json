@@ -21,7 +21,7 @@
     "@cap-js/sqlite": "^1.9.0",
     "@sap/cds-dk": "^9.3.2",
     "@sap/ux-specification": "UI5-1.135",
-    "axios": "^1.15.2",
+    "axios": "^1.16.0",
     "chai": "^4.5.0",
     "chai-as-promised": "^7.1.2",
     "chai-shallow-deep-equal": "^1.4.6",
